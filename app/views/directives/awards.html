@@ -1,0 +1,20 @@
+<table class="table">
+    <tr>
+        <td ng-repeat="group in groups">
+            <div ng-class="{'flip': max >= group.threshold, 'flip-container': true}" ontouchstart="this.classList.toggle('hover');">
+                <div class="flipper">
+                    <div class="front gradient-flip-front">
+                        <div class="back-logo"></div>
+                        <p class="title">{{group.name}}</p>
+                        <p class="sub-title">Skills: <span class="badge">{{group.skills.length}}</span></p>
+                    </div>
+                    <div class="back gradient-flip-back" ng-click="goToPoint(group)">
+                        <div class="back-logo"></div>
+                        <p>{{group.name}}: {{group.description}}</p>
+                        <span class="badge" ng-repeat="skill in group.skills">{{skill}}</span>
+                    </div>
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
