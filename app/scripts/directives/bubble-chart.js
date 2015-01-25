@@ -40,27 +40,13 @@ angular.module('valorumApp')
                     .attr("height", diameter)
                     .attr("class", "bubble");
 
-				var animate = function(root) {
+				var animate = function(group) {
 
-					var rootCopy = angular.copy(root);
-					var keep = 0;
-					var remove = 0;
-
-					if($scope.max) {
-						keep = Math.round(root.children.length * ($scope.max) / 100);
-					}
-
-					if(keep == 0) {
-						keep = 1;
-					}
-					remove = root.children.length - keep;
-					rootCopy.children.splice(keep, remove);
-
-					if(!angular.equals(rootCopy, oldData)) {
+					if(!oldData || (group.children.length != oldData.children.length)) {
 						svg.selectAll("*").remove();
 
 						var node = svg.selectAll(".node")
-							.data(bubble.nodes(classes(rootCopy))
+							.data(bubble.nodes(group)
 								.filter(function (d, x, y) {
 									return !d.children;
 								}))
@@ -82,6 +68,10 @@ angular.module('valorumApp')
 							.style("fill", function (d) {
 								return color(d.packageName);
 							});
+//							.style('opacity', 0)
+//							.transition()
+//							.duration(200 * 1.2)
+//							.style('opacity', 1);
 
 						node.append("text")
 							.attr("dy", ".3em")
@@ -90,37 +80,22 @@ angular.module('valorumApp')
 								return d.className.substring(0, d.r / 3);
 							});
 
-						oldData = angular.copy(rootCopy);
+						oldData = angular.copy(group);
 					}
 
 				};
 
-				// Returns a flattened hierarchy containing all leaf nodes under the root.
-                function classes(root) {
-                    var classes = [];
-
-                    function recurse(name, node) {
-                        if (node.children) node.children.forEach(function (child) {
-                            recurse(node.name, child);
-                        });
-                        else classes.push({packageName: name, className: node.name, value: node.size});
-                    }
-
-                    recurse(null, root);
-                    return {children: classes};
-                }
-
                 d3.select(self.frameElement).style("height", diameter + "px");
 
 				$scope.$watch('max', function() {
-					if($scope.skills && $scope.skills.children && $scope.skills.children.length) {
-						animate($scope.skills);
+					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
+						animate($scope.skills.getAcquiredDetailedSkills($scope.max));
 					}
 				}, true);
 
-				$scope.$watch('skills', function() {
-					if($scope.skills && $scope.skills.children && $scope.skills.children.length) {
-						animate($scope.skills);
+				$scope.$watch('skills.all', function() {
+					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
+						animate($scope.skills.getAcquiredDetailedSkills($scope.max));
 					}
 				}, true);
 

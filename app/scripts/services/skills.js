@@ -12,9 +12,9 @@ angular.module('valorumApp')
     // Public API here
     return {
 
-		getAllUnacquired: function(max) {
+		getNeeded: function(max) {
 			var skills = [];
-			angular.forEach(this.allList, function(group) {
+			angular.forEach(this.all, function(group) {
 				if(group.threshold >= max) {
 					skills = skills.concat(group.skills);
 				}
@@ -22,9 +22,31 @@ angular.module('valorumApp')
 			return skills;
 		},
 
-		getAllAcquired: function(max) {
+		getAcquiredDetailedSkills: function(max) {
+
+			var flattened = {
+				name: "Skills Earned",
+				children: []
+			};
+
+			angular.forEach(this.all, function(group){
+				if(group.threshold <= max) {
+					angular.forEach(group.skills, function(skill){
+						flattened.children.push({
+							className: skill,
+							value: parseInt(group.threshold) + 10,
+							packageName: group.name
+						});
+					});
+				}
+			});
+
+			return flattened;
+		},
+
+		getAcquired: function(max) {
 			var skills = [];
-			angular.forEach(this.allList, function(group) {
+			angular.forEach(this.all, function(group) {
 				if(group.threshold <= max) {
 					skills = skills.concat(group.skills);
 				}
@@ -32,20 +54,10 @@ angular.module('valorumApp')
 			return skills;
 		},
 
-		getAllList: function() {
-			var _this = this;
-			this.http.list().$promise.then(function(response){
-				_this.allList = response.groups;
-			});
-		},
-
 		getAll: function() {
 			var _this = this;
 			this.http.get().$promise.then(function(response){
-				_this.all = {
-					name: response.name,
-					children: response.children
-				};
+				_this.all = response.groups;
 			});
 		},
 
@@ -71,10 +83,6 @@ angular.module('valorumApp')
 				params: {
 					id: '@id'
 				}
-			},
-			list: {
-				url: 'json/skills-list.json',
-				method: 'GET'
 			},
 			post: {
 				method: 'POST'

@@ -58,7 +58,7 @@
 }
 
 .gradient-flip-back {
-    padding: 20px;
+    padding: 15px;
 
     border-radius: 37px;
     box-shadow: inset 0px 0px 7px #000000;
@@ -86,4 +86,8 @@
     margin-top: -30px;
     border-top: thin solid rgb(195, 195, 195);
     padding-top: 3px;
+}
+
+.flip-container .badge {
+    margin: 1px;
 }

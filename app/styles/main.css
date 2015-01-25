@@ -6,61 +6,11 @@ body {
 }
 
 text {
-    font: 10px sans-serif;
+    font: 12px sans-serif;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-    padding-left: 15px;
-    padding-right: 15px;
-}
 .container {
     width: 100%;
-}
-/* Custom page header */
-.header {
-    border-bottom: 1px solid #e5e5e5;
-}
-
-/* Make the masthead heading the same height as the navigation */
-.header h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-}
-
-/* Custom page footer */
-.footer {
-    padding-top: 19px;
-    color: #777;
-    border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-    margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-    text-align: center;
-    border-bottom: 1px solid #e5e5e5;
-}
-
-.jumbotron .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-}
-
-/* Supporting marketing content */
-.marketing {
-    margin: 40px 0;
-}
-
-.marketing p + h4 {
-    margin-top: 28px;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -84,11 +34,15 @@ text {
     }
 }
 
+/*Rangeslider*/
 .ngrs-range-slider {
     margin: 0px 0 0px;
     padding: 2px;
 }
 
+
+
+/*Statistics*/
 .visualizer .row {
     margin-bottom: 15px;
 }
@@ -99,4 +53,19 @@ text {
 
 .statistics .badge {
     font-size: 18px;
+}
+
+
+/*General*/
+.complete{
+    background-color: rgb(51, 122, 183) !important;
+}
+
+.acquired{
+    background-color: rgb(2, 129, 53) !important;
+    border-color: rgb(2, 129, 53) !important;
+}
+
+.needed {
+    background-color: #cccccc;
 }

@@ -14,21 +14,25 @@ angular.module('valorumApp')
             scope: {
                 //@ reads the attribute value, = provides two-way binding, & works with functions
                 title: '@',
-                skillGroups: '=',
-                salaryGroups: '=',
+                skills: '=',
+                salary: '=',
 				max: '='
             },
             //Embed a custom controller in the directive
             link: function ($scope, element) {
 
 				var theMax = $scope.max;
-				var data, markers;
+				var data, markers, markerSvg = [];
 
 				var svg = d3.select(element[0]).append('svg');
-				var locationLine = svg.append("line");
+				var locationLine = svg.append('line');
 
-				var svgWidth  = element.parent().width(),
+				var svgWidth  = element.parent().width() - 100,
 					svgHeight = 500;
+
+				var div = d3.select('body').append('div')
+					.attr('class', 'chart-tooltip')
+					.style('opacity', 0);
 
 				function addAxesAndLegend (xAxis, yAxis, margin, chartWidth, chartHeight) {
 					var legendWidth  = 200,
@@ -168,12 +172,27 @@ angular.module('valorumApp')
 					var radius = 32,
 						xPos = ((parseInt(marker.threshold)/100) * svgWidth),
 						yPosStart = chartHeight - radius - 3,
-						yPosEnd = (marker.type === 'Client' ? 80 : 160) + radius - 3;
+						//use modulus
+						yPosEnd = ((markers.indexOf(marker) % 2) ? 160 : 80) + radius - 3;
 
 					var markerG = svg.append('g')
-						.attr('class', 'marker '+marker.type.toLowerCase())
+						.attr('class', 'marker')
 						.attr('transform', 'translate(' + xPos + ', ' + yPosStart + ')')
-						.attr('opacity', 0)
+						.on('mouseover', function(d) {
+							var newHtml = '<b>' + marker.name + ':</b> ' + marker.description;
+
+							div.transition()
+								.duration(200)
+								.style('opacity', .9);
+							div.html(newHtml)
+								.style('left', (d3.event.pageX) + 'px')
+								.style('top', (d3.event.pageY - 28) + 'px');
+						})
+						.on('mouseout', function(d) {
+							div.transition()
+								.duration(500)
+								.style('opacity', 0);
+						})
 						.on('click', function(){
 							$scope.max = marker.threshold;
 							$scope.$apply();
@@ -204,39 +223,46 @@ angular.module('valorumApp')
 					markerG.append('text')
 						.attr('x', radius)
 						.attr('y', radius*1.5)
-						.text(marker.skills.length);
+						.text(marker.skills.length + ' skills');
+
+					markerSvg.push(markerG);
 				}
 
 				function startTransitions (chartWidth, chartHeight, rectClip, markers, x) {
 					rectClip.transition()
-						.duration(1000*markers.length)
+						.duration(300 * markers.length)
 						.attr('width', chartWidth);
 
 //					rectClip.attr('width', chartWidth);
 
 					markers.forEach(function (marker, i) {
-						setTimeout(function () {
+//						setTimeout(function () {
 							addMarker(marker, chartHeight, x);
-						}, 1000 + 500*i);
+//						}, 300 + 300*i);
 					});
+
 				}
 
-				function makeChart (data, markers) {
-					var margin = { top: 20, right: 20, bottom: 40, left: 40 },
+				function makeChart (chartData, markers) {
+//					var margin = { top: 20, right: 20, bottom: 40, left: 40 },
+
+					var margin = { top: 0, right: 0, bottom: 25, left: 0 },
 						chartWidth  = svgWidth  - margin.left - margin.right,
 						chartHeight = svgHeight - margin.top  - margin.bottom;
 
 					var x = d3.time.scale().range([0, chartWidth])
-							.domain(d3.extent(data, function (d) {
+							.domain(d3.extent(chartData, function (d) {
 								return d.date;
 							})),
 						y = d3.scale.linear().range([chartHeight, 0])
-							.domain([0, d3.max(data, function (d) { return d.pct95; })]);
+							.domain([0, d3.max(chartData, function (d) {
+								return d.pct95;
+							})]);
 
 					var xAxis = d3.svg.axis().scale(x).orient('bottom')
-							.innerTickSize(-chartHeight).outerTickSize(0).tickPadding(10),
+							.innerTickSize(-chartHeight).outerTickSize(0).tickPadding(5),
 						yAxis = d3.svg.axis().scale(y).orient('left')
-							.innerTickSize(-chartWidth).outerTickSize(0).tickPadding(10);
+							.innerTickSize(-chartWidth).outerTickSize(0).tickPadding(5);
 
 					svg.attr('width',  svgWidth)
 						.attr('height', svgHeight)
@@ -265,13 +291,25 @@ angular.module('valorumApp')
 							name: marker.name,
 							description: marker.description,
 							skills: marker.skills,
-							threshold: marker.threshold
+							threshold: marker.threshold,
+							date: parseDate(marker.date)
 						};
 					});
 
 					if(data && markers) {
 						makeChart(data, markers);
 					}
+				};
+
+				var rebuildMarkerData = function() {
+					angular.forEach(markerSvg, function (marker, i) {
+						marker.classed('acquired', function() {
+							return $scope.max >= markers[i].threshold;
+						});
+						marker.classed('needed', function() {
+							return $scope.max <= markers[i].threshold;
+						});
+					});
 				};
 
 				var buildChartData = function(rawData) {
@@ -294,14 +332,15 @@ angular.module('valorumApp')
 				var moveIndexLine = function() {
 					//Move the Line
 					locationLine
-					.attr("x1",  Math.round(((parseInt($scope.max)/100) * svgWidth + 33)))
-					.attr("x2",  Math.round(((parseInt($scope.max)/100) * svgWidth + 33)))
-						.attr("y1", 0)
-						.attr("y2", svgHeight)
-						.attr("stroke", "#5184AF")
-						.attr("stroke-width", 2)
-						.attr("stroke-linecap", "round")
-						.attr("stroke-dasharray", 30)
+						.attr('x1',  Math.round(((parseInt($scope.max)/100) * svgWidth + 33)))
+						.attr('x2',  Math.round(((parseInt($scope.max)/100) * svgWidth + 33)))
+						.attr('y1', 0)
+						.attr('y2', svgHeight)
+						.attr('stroke', 'rgb(230, 85, 13)')
+						.attr('stroke-width', 2)
+						.attr('stroke-linecap', 'round')
+						.attr('stroke-dasharray', 30);
+
 				};
 
 				$scope.$watch('max', function() {
@@ -310,18 +349,27 @@ angular.module('valorumApp')
 					}
 				}, true);
 
-				$scope.$watch('salaryGroups', function() {
-					if($scope.salaryGroups && $scope.salaryGroups.length) {
-						buildChartData($scope.salaryGroups);
+				$scope.$watch('salary', function() {
+					if($scope.salary && $scope.salary.length) {
+						buildChartData($scope.salary);
 					}
 				}, true);
 
-				$scope.$watch('skillGroups', function() {
-					if($scope.skillGroups && $scope.skillGroups.length) {
-						buildMarkerData($scope.skillGroups);
+				$scope.$watch('skills.all', function() {
+					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
+						buildMarkerData($scope.skills.all);
 					}
 				}, true);
 
+				$scope.$watch(function() {
+					if($scope.skills.all && $scope.skills.all.length) {
+						return $scope.skills.getAcquired($scope.max).length;
+					}
+				}, function() {
+					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
+						rebuildMarkerData();
+					}
+				}, true);
 			}
         }
     });

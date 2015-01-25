@@ -16,5 +16,4 @@ angular.module('valorumApp')
 
 		Salary.getAll();
 		Skills.getAll();
-		Skills.getAllList();
     });

@@ -10,8 +10,8 @@
                     </div>
                     <div class="back gradient-flip-back" ng-click="goToPoint(group)">
                         <div class="back-logo"></div>
-                        <p>{{group.name}}: {{group.description}}</p>
-                        <span class="badge" ng-repeat="skill in group.skills">{{skill}}</span>
+                        <p><b>{{group.name}}:</b> {{group.description}}</p>
+                        <span ng-class="{'acquired': max >= group.threshold, 'badge': true}" ng-repeat="skill in group.skills">{{skill}}</span>
                     </div>
                 </div>
             </div>
