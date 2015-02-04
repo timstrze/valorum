@@ -22,10 +22,39 @@ angular.module('valorumApp')
             link: function ($scope, element) {
 
 				var theMax = $scope.max;
-				var data, markers, markerSvg = [];
+				var data, markers, xPos, markerSvg = [];
 
 				var svg = d3.select(element[0]).append('svg');
 				var locationLine = svg.append('line');
+
+//				locationLine.on("mousedown", mousedown);
+//				svg.on("mouseup", mouseup);
+
+				function mousedown() {
+					//var m = d3.mouse(this);
+					svg.on("mousemove", mousemove);
+				}
+
+				function mousemove() {
+					var m = d3.mouse(this);
+					xPos = Math.round((m[0]/svgWidth) * 100);
+
+					locationLine
+						.attr("x1", m[0])
+						.attr("x2", m[0])
+						.attr("y1", 0)
+						.attr("y2", svgHeight);
+				}
+
+				function mouseup() {
+					if(xPos) {
+						$scope.max = xPos;
+					}
+
+					svg.on("mousemove", null);
+					$scope.$apply();
+
+				}
 
 				var svgWidth  = element.parent().width() - 100,
 					svgHeight = 500;
@@ -177,22 +206,28 @@ angular.module('valorumApp')
 
 					var markerG = svg.append('g')
 						.attr('class', 'marker')
+						.classed('acquired', function() {
+							return $scope.max >= marker.threshold;
+						})
+						.classed('needed', function() {
+							return $scope.max <= marker.threshold;
+						})
 						.attr('transform', 'translate(' + xPos + ', ' + yPosStart + ')')
-						.on('mouseover', function(d) {
-							var newHtml = '<b>' + marker.name + ':</b> ' + marker.description;
-
-							div.transition()
-								.duration(200)
-								.style('opacity', .9);
-							div.html(newHtml)
-								.style('left', (d3.event.pageX) + 'px')
-								.style('top', (d3.event.pageY - 28) + 'px');
-						})
-						.on('mouseout', function(d) {
-							div.transition()
-								.duration(500)
-								.style('opacity', 0);
-						})
+//						.on('mouseover', function(d) {
+//							var newHtml = '<b>' + marker.name + ':</b> ' + marker.description;
+//
+//							div.transition()
+//								.duration(200)
+//								.style('opacity', .9);
+//							div.html(newHtml)
+//								.style('left', (d3.event.pageX) + 'px')
+//								.style('top', (d3.event.pageY - 28) + 'px');
+//						})
+//						.on('mouseout', function(d) {
+//							div.transition()
+//								.duration(500)
+//								.style('opacity', 0);
+//						})
 						.on('click', function(){
 							$scope.max = marker.threshold;
 							$scope.$apply();
@@ -246,7 +281,7 @@ angular.module('valorumApp')
 				function makeChart (chartData, markers) {
 //					var margin = { top: 20, right: 20, bottom: 40, left: 40 },
 
-					var margin = { top: 0, right: 0, bottom: 25, left: 0 },
+					var margin = { top: 0, right: 0, bottom: 20, left: 0 },
 						chartWidth  = svgWidth  - margin.left - margin.right,
 						chartHeight = svgHeight - margin.top  - margin.bottom;
 
@@ -260,9 +295,9 @@ angular.module('valorumApp')
 							})]);
 
 					var xAxis = d3.svg.axis().scale(x).orient('bottom')
-							.innerTickSize(-chartHeight).outerTickSize(0).tickPadding(5),
+							.innerTickSize(-chartHeight).outerTickSize(0).tickPadding(10),
 						yAxis = d3.svg.axis().scale(y).orient('left')
-							.innerTickSize(-chartWidth).outerTickSize(0).tickPadding(5);
+							.innerTickSize(-chartWidth).outerTickSize(0).tickPadding(10);
 
 					svg.attr('width',  svgWidth)
 						.attr('height', svgHeight)
@@ -339,7 +374,8 @@ angular.module('valorumApp')
 						.attr('stroke', 'rgb(230, 85, 13)')
 						.attr('stroke-width', 2)
 						.attr('stroke-linecap', 'round')
-						.attr('stroke-dasharray', 30);
+						.attr('stroke-dasharray', 30)
+						.attr('class', 'index-line');
 
 				};
 

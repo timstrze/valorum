@@ -1,0 +1,25 @@
+/*
+In: given a list of course IDs, which would go in the following cypher query:
+MATCH (c:Course)-[r]-(s:Skill) WHERE id(c) in [4815702, 6274084, 5151603] return id(c), collect(s.name)
+Out: list of courses and skills
+*/
+[
+	{
+		"id": 5151603,
+		"name": "Accounting I",
+		"code": "AC114",
+		"skills": ["Presentation", "Recording", "Profession", "Management", "Cycle", "Creation", "Data", "Accounting"]
+	},
+	{
+		"id": 4815702,
+		"name": "Accounting For Nonaccounting Majors",
+		"code": "AC113",
+		"skills": ["Internal control", "Control", "Equity", "Accounting"]
+	},
+	{
+		"id": 6274084,
+		"name": "Introduction To Information Technology",
+		"code": "IT101",
+		"skills": ["Mobile computing", "Mobile", "BASIC", "Software", "Internet", "Hardware", "Technology", "2008", "Computing", "Internets", "Security"]
+	}
+]

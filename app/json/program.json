@@ -1,0 +1,41 @@
+/*
+Requested: program_id
+Response: below
+*/
+{
+	"program_id": 123,
+	"name": "Bachelor of Science in Computer Science",
+	"type": "Bachelor of Science",
+	"courses": [
+		{
+			"ordinal": 1,
+			"id": 4815702,
+			"cid": 59806817,
+			"name": "Accounting For Nonaccounting Majors",
+			"code": "AC113",
+			"credits": 3,
+            "skills": ["Presentation", "Recording", "Profession", "Management", "Cycle", "Creation", "Data", "Accounting"],
+			"description": "This course emphasizes the use of accounting by managers in a business environment. Topics covered include accounting concepts, internal control, current assets, noncurrent assets, liabilities, and equity. The course is specifically designed for nonaccounting majors, and emphasis is placed on accounting areas affecting business owners and managers."
+		},
+		{
+			"ordinal": 2,
+			"id": 6274084,
+			"cid": 48209329,
+			"name": "Introduction To Information Technology",
+			"code": "IT101",
+			"credits": 5,
+            "skills": ["Internal control", "Control", "Equity", "Accounting"],
+			"description": "This introductory course is designed for students preparing for careers in information technology. Students will explore the basic concepts of hardware, software, the Internet, networks, security, and mobile computing. Effective January 30, 2008."
+		},
+		{
+			"ordinal": 3,
+			"id": 5151603,
+			"cid": 59806822,
+			"name": "Accounting I",
+			"code": "AC114",
+			"credits": 5,
+            "skills": ["Mobile computing", "Mobile", "BASIC", "Software", "Internet", "Hardware", "Technology", "2008", "Computing", "Internets", "Security"],
+			"description": "This course reviews the complete accounting cycle and the creation and management of accounting information for business entities. Particular emphasis will be placed on the fundamental principles and skills of the accounting profession, including recording of transactions, financial presentation of accounting data, and the uses of accounting information."
+		}
+	]
+}

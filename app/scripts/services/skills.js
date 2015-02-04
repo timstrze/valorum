@@ -14,16 +14,17 @@ angular.module('valorumApp')
 
 		getNeeded: function(max) {
 			var skills = [];
+
 			angular.forEach(this.all, function(group) {
 				if(group.threshold >= max) {
 					skills = skills.concat(group.skills);
 				}
 			});
+
 			return skills;
 		},
 
 		getAcquiredDetailedSkills: function(max) {
-
 			var flattened = {
 				name: "Skills Earned",
 				children: []
@@ -46,11 +47,13 @@ angular.module('valorumApp')
 
 		getAcquired: function(max) {
 			var skills = [];
+
 			angular.forEach(this.all, function(group) {
 				if(group.threshold <= max) {
 					skills = skills.concat(group.skills);
 				}
 			});
+
 			return skills;
 		},
 

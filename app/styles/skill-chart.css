@@ -79,7 +79,6 @@ svg {
 .marker text {
     text-anchor: middle;
     cursor: pointer;
-
 }
 
 .chart-tooltip {
@@ -93,5 +92,7 @@ svg {
     background: lightsteelblue;
     border: 0px;
     border-radius: 8px;
-    pointer-events: none;
 }
+/*.index-line {*/
+    /*cursor: pointer;*/
+/*}*/

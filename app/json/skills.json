@@ -6,7 +6,7 @@
             "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
             "type": "Client",
             "version": "2.0",
-            "skills": ["reliability", "magazines", "stills", "accounting", "facts", "academic research", "clarity", "financials", "revisions"],
+            "skills": ["accounting", "facts", "academic research", "clarity", "financials", "revisions"],
             "threshold": "0"
         },
         {
@@ -15,7 +15,7 @@
             "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
             "type": "Client",
             "version": "2.1",
-            "skills": ["mets", "instructors", "strengthening", "forwards", "reviews", "communication", "critical reading", "texts"],
+            "skills": ["mets", "instructors", "communication", "critical reading", "texts"],
             "threshold": "12.5"
         },
         {
@@ -33,7 +33,7 @@
             "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
             "type": "Client",
             "version": "2.2",
-            "skills": ["email", "deals", "credit", "materials", "steps", "project plans", "crafts", "writers", "cms", "options"],
+            "skills": ["email", "deals", "credit", "writers", "cms", "options"],
             "threshold": "37.5"
         },
         {

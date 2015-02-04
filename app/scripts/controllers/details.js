@@ -2,13 +2,13 @@
 
 /**
  * @ngdoc function
- * @name valorumApp.controller:MainCtrl
+ * @name valorumApp.controller:DetailsCtrl
  * @description
  * # MainCtrl
  * Controller of the valorumApp
  */
 angular.module('valorumApp')
-    .controller('MainCtrl', function ($scope, $location, Student, Skills, Salary, TypeAhead, Program) {
+    .controller('DetailsCtrl', function ($scope, Student, Skills, Salary, TypeAhead, Program) {
 
 		$scope.Program = Program;
 		$scope.Student = Student;
@@ -20,8 +20,6 @@ angular.module('valorumApp')
 			Program.getDetails(item);
 			Salary.getAll();
 			Skills.getAll();
-
-			$location.path('/details');
 		}
 
     });

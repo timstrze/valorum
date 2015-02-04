@@ -1,0 +1,64 @@
+{
+    "programs": [
+        {
+            "Active":true,
+            "Degree":"Bachelor of Science",
+            "DegreeId":25,
+            "ProgramId":1,
+            "ProgramCode":"IT      ",
+            "ProgramVersionCode":"BPBSITI   ",
+            "AdProgramVersionID":451187,
+            "ProgramVersionName":"Blueprint Bachelor of Science in Information Technology - Information Systems",
+            "CreditsRequired":180.00,
+            "TotalWeeks":200.00,
+            "CIPCode":"11.0103",
+            "TranscriptDescription":"Bachelor of Science in Information Technology",
+            "Program":"Information Technology"
+        },
+        {
+            "Active":true,
+            "Degree":"2 + 2 Bachelor",
+            "DegreeId":10,
+            "ProgramId":22,
+            "ProgramCode":"NUR     ",
+            "ProgramVersionCode":"42BSN20A! ",
+            "AdProgramVersionID":448324,
+            "ProgramVersionName":"XXa! Bachelor of Science in Nursing",
+            "CreditsRequired":183.00,
+            "TotalWeeks":88.00,
+            "CIPCode":"51.3801",
+            "TranscriptDescription":"Bachelor of Science in Nursing",
+            "Program":"Nursing"
+        },
+        {
+            "Active":true,
+            "Degree":"Bachelor of Science",
+            "DegreeId":25,
+            "ProgramId":6,
+            "ProgramCode":"BUS     ",
+            "ProgramVersionCode":"42BSA.26  ",
+            "AdProgramVersionID":446199,
+            "ProgramVersionName":"XXVI. Bachelor of Science in Business Administration ",
+            "CreditsRequired":180.00,
+            "TotalWeeks":200.00,
+            "CIPCode":"52.0201",
+            "TranscriptDescription":"Bachelor of Science in Business Administration",
+            "Program":"Business Administration"
+        },
+        {
+            "Active":true,
+            "Degree":"2 + 2 Bachelor",
+            "DegreeId":10,
+            "ProgramId":7,
+            "ProgramCode":"CJ      ",
+            "ProgramVersionCode":"42B+CJO.38",
+            "AdProgramVersionID":450789,
+            "ProgramVersionName":"XXXVIII. Advanced Start Bachelor of Science in Criminal Justice - Computer Crime",
+            "CreditsRequired":180.00,
+            "TotalWeeks":88.00,
+            "CIPCode":"43.0104",
+            "TranscriptDescription":"Bachelor of Science in Criminal Justice",
+            "Program":"Criminal Justice"
+        }
+    ]
+}
