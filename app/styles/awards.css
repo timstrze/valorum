@@ -70,7 +70,7 @@
 .gradient-flip-front p.title{
     font-size: 700%;
     text-align: center;
-    padding-top: 5px;
+    padding-top: 64px;
 }
 
 .flip-container {
@@ -84,7 +84,7 @@
 
 .gradient-flip-front p.sub-title{
     text-align: center;
-    margin-top: -30px;
+    margin-top: 42px;
     border-top: thin solid rgb(195, 195, 195);
     padding-top: 3px;
 }
@@ -95,5 +95,8 @@
 
 .awards p {
     font-size: 15px;
+}
+.awards.list-inline > li {
+    width: 195px;
 }
 

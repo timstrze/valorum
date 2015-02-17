@@ -19,10 +19,6 @@ angular.module('valorumApp')
 
 			},
 			controller: function($scope) {
-//				$scope.$watch('max', function() {
-//
-//				}, true);
-
 				$scope.goToPoint = function(group) {
 					$scope.max = group.threshold;
 				}

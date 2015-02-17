@@ -119,7 +119,7 @@ a.navbar-brand:hover {
     padding-top: 150px;
     background-attachment: relative;
     background-position: center center;
-    min-height: 650px;
+    min-height: 900px;
     width: 100%;
 
     -webkit-background-size: 100%;
@@ -319,4 +319,8 @@ p.copyright {
     border-radius: 9px;
     box-shadow: inset 0px 0px 2px #000000;
     background: #fff;
+}
+
+.skill-column .acquired{
+    font-size: 16px;
 }

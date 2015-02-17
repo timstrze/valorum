@@ -4,10 +4,16 @@
 
     <div class="row">
         <div class="col-md-2 skill-column">
+
+            <h2>User Profile</h2>
+            <p><span ng-class="{'badge':Student.max == 100,'acquired':Student.max == 100, }">Completed: {{Student.max}}%</span></p>
+            <p>Skills Acquired: {{Skills.getAcquired(Student.max).length}}</p>
+            <p>Skills Needed: {{Skills.getNeeded(Student.max).length}}</p>
+
+            <h2>Previous Skills</h2>
             <skill-search max="Student.max" previous-skills="Student.previousSkills"></skill-search>
 
-            <legend style="margin-top: 50px;">Related Skills</legend>
-
+            <h2>Combined Skills</h2>
             <bubble-chart max="Student.max" skills="Skills"></bubble-chart>
         </div>
         <div class="col-md-10">
@@ -17,33 +23,47 @@
             <div class="text-center visualizer">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="btn-group btn-group-lg" role="group" aria-label="Large button group">
-                            <button type="button" class="btn btn-primary" ng-click="Student.max = 0">Start</button>
-                            <button type="button" class="btn btn-default" style="width:1390px">
-                                <div range-slider min="0" max="100" model-max="Student.max" pin-handle="min"></div>
-                            </button>
-                            <button type="button" ng-class="{'btn':true, 'btn-warning':true, 'acquired':Student.max == 100}"
-                                    ng-click="Student.max = 100">Finish
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row statistics">
-                    <div class="col-md-12">
-                        <span class="badge complete">Percentage Completed: {{Student.max}}%</span>
-                        <span class="badge acquired">Skills Acquired: {{Skills.getAcquired(Student.max).length}}</span>
-                        <span class="badge">Skills Needed: {{Skills.getNeeded(Student.max).length}}</span>
+                        <h1>{{Program.selectedProgram.ProgramVersionName}}</h1>
+                        <span class="description">{{Program.selectedProgram.TranscriptDescription}}</span>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12">
-                        <skill-chart max="Student.max" salary="Salary.all" skills="Skills"></skill-chart>
+                    <div class="col-md-1">
+                        <button type="button"
+                                style="margin-right: -55px;margin-top: -5px;"
+                                class="btn btn-primary"
+                                ng-click="Student.max = 0">
+                            Start
+                        </button>
                     </div>
+                    <div class="col-md-10">
+                        <div range-slider min="0" max="100" model-max="Student.max" pin-handle="min"></div>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button"
+                                style="margin-left: -51px;margin-top: -5px;"
+                                ng-class="{'btn':true, 'btn-warning':true, 'acquired':Student.max == 100}"
+                                ng-click="Student.max = 100">Finish
+                        </button>
                 </div>
             </div>
 
+            <div class="row statistics">
+                <div class="col-md-12">
+                    <span class="badge complete">Percentage Completed: {{Student.max}}%</span>
+                    <span class="badge acquired">Skills Acquired: {{Skills.getAcquired(Student.max).length}}</span>
+                    <span class="badge">Skills Needed: {{Skills.getNeeded(Student.max).length}}</span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <skill-chart max="Student.max" salary="Salary.all" skills="Skills"></skill-chart>
+                </div>
+            </div>
         </div>
+
     </div>
+</div>
 </div>

@@ -2,7 +2,6 @@
     <fieldset>
 
         <!-- Form Name -->
-        <legend>Previous Skills</legend>
         <div class="row">
             <div class="col-md-12">
                 <span class="badge badge-blue" ng-repeat="skill in previousSkills">{{skill}}</span>
@@ -15,7 +14,7 @@
                 <input class="form-control"
                        type="text"
                        ng-model="asyncDegreeSelected"
-                       placeholder="Search for Skills by Name"
+                       placeholder="Add your previous skills here"
                        typeahead-on-select="addSkill($item); asyncDegreeSelected=''"
                        typeahead="Skill as Skill.name for Skill in TypeAhead.getSkills($viewValue)"
                        typeahead-loading="isLoading">
