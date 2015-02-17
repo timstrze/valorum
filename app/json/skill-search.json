@@ -1,0 +1,54 @@
+{
+    "skills": [
+        {
+            "id": 11,
+            "name": "Business Valuations",
+            "score": 0
+        },
+        {
+            "id": 25,
+            "name": "Business Valuation",
+            "score": 0
+        },
+        {
+            "id": 1355,
+            "name": "Advanced Business Application Programming (ABAP)",
+            "score": 0
+        },
+        {
+            "id": 1542,
+            "name": "B2B (Business to Business)",
+            "score": 0
+        },
+        {
+            "id": 1545,
+            "name": "B2C (Business to Consumer)",
+            "score": 0
+        },
+        {
+            "id": 1649,
+            "name": "Business  Intelligence",
+            "score": 0
+        },
+        {
+            "id": 1650,
+            "name": "Business Accounting",
+            "score": 0
+        },
+        {
+            "id": 1651,
+            "name": "Business Analysis",
+            "score": 0
+        },
+        {
+            "id": 1652,
+            "name": "Business Application Programming Interface",
+            "score": 0
+        },
+        {
+            "id": 1653,
+            "name": "Business Architecture",
+            "score": 0
+        }
+    ]
+}

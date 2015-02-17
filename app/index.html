@@ -16,7 +16,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/bubble-chart.css">
     <link rel="stylesheet" href="styles/skill-chart.css">
-    <link rel="stylesheet" href="styles/flip.css">
+    <link rel="stylesheet" href="styles/awards.css">
+    <link rel="stylesheet" href="styles/skill-search.css">
     <!-- endbuild -->
   </head>
   <body ng-app="valorumApp">
@@ -25,7 +26,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ng-view class="slide"></div>
+    <div ui-view class="slide"></div>
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
@@ -48,6 +49,9 @@
     <script src="bower_components/d3/d3.js"></script>
     <script src="bower_components/angular-rangeslider/angular.rangeSlider.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+    <script src="bower_components/restangular/dist/restangular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -64,6 +68,7 @@
         <script src="scripts/services/salary.js"></script>
         <script src="scripts/services/type-ahead.js"></script>
         <script src="scripts/services/program.js"></script>
+        <script src="scripts/directives/skill-search.js"></script>
         <!-- endbuild -->
 </body>
 </html>

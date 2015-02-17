@@ -42,10 +42,11 @@
 }
 
 .gradient-flip-front {
-    padding: 15px;
+    padding-top: 8px;
+    padding-left: 7px;
 
-    border-radius: 37px;
-    box-shadow: 0px 0px 7px #000000;
+    border-radius: 30px;
+    box-shadow: 0px 0px 2px #000000;
 
     background: #e2e2e2; /* Old browsers */
     background: -moz-linear-gradient(top,  #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%); /* FF3.6+ */
@@ -58,9 +59,11 @@
 }
 
 .gradient-flip-back {
-    padding: 15px;
-    border-radius: 37px;
-    box-shadow: inset 0px 0px 7px #000000;
+    padding-top: 8px;
+    padding-left: 7px;
+
+    border-radius: 30px;
+    box-shadow: inset 0px 0px 2px #000000;
     background: #fff;
 }
 
@@ -89,3 +92,8 @@
 .flip-container .badge {
     margin: 1px;
 }
+
+.awards p {
+    font-size: 15px;
+}
+

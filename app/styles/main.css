@@ -31,10 +31,10 @@ h4 {
     font-size: 20px;
 }
 
-p {
-    margin-bottom: 20px;
-    font-size: 16px;
-}
+/*p {*/
+    /*margin-bottom: 20px;*/
+    /*font-size: 16px;*/
+/*}*/
 
 
 a {
@@ -49,7 +49,7 @@ a {
 
 a:hover,
 a:focus {
-    color: #b7cb1b;
+    color: #0F2846;
     text-decoration: none;
     outline: 0;
 }
@@ -63,7 +63,7 @@ a:after {
     transition: color 0.1s ease-in, background 0.1s ease-in;
 }
 .navbar-inverse .navbar-nav > li > a {
-    color: #c6d550;
+    color: #0F2846;
 }
 
 .alignleft {
@@ -115,7 +115,7 @@ a.navbar-brand:hover {
 #header {
     background-color: #444;
     background: url(../images/main-bg.jpg) no-repeat center top;
-    margin-top: -20px;
+    margin-top: 61px;
     padding-top: 150px;
     background-attachment: relative;
     background-position: center center;
@@ -302,5 +302,21 @@ p.copyright {
 
 
 .program-details {
-    margin-top: 60px;
+    margin-top: 86px;
+}
+
+.navbar {
+    height: 61px;
+    background-color: rgb(229, 229, 229);
+}
+
+.badge-blue {
+    background-color: #0F2846 !important;
+    margin: 1px;
+}
+
+.skill-column {
+    border-radius: 9px;
+    box-shadow: inset 0px 0px 2px #000000;
+    background: #fff;
 }

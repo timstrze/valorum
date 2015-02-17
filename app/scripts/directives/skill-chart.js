@@ -22,7 +22,7 @@ angular.module('valorumApp')
             link: function ($scope, element) {
 
 				var theMax = $scope.max;
-				var data, markers, xPos, markerSvg = [];
+				var data, markers, xPos, markerSvg = [], hasRendered = false;
 
 				var svg = d3.select(element[0]).append('svg');
 				var locationLine = svg.append('line');
@@ -314,6 +314,7 @@ angular.module('valorumApp')
 					addAxesAndLegend(xAxis, yAxis, margin, chartWidth, chartHeight);
 					drawPaths(data, x, y);
 					startTransitions(chartWidth, chartHeight, rectClip, markers, x);
+					hasRendered = true;
 				}
 
 				var parseDate  = d3.time.format('%Y-%m-%d').parse;
@@ -392,7 +393,7 @@ angular.module('valorumApp')
 				}, true);
 
 				$scope.$watch('skills.all', function() {
-					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
+					if($scope.skills && $scope.skills.all && $scope.skills.all.length && !hasRendered) {
 						buildMarkerData($scope.skills.all);
 					}
 				}, true);

@@ -10,6 +10,7 @@
 angular.module('valorumApp')
   .factory('Student', function () {
 		return {
-			max: 30
+			max: 30,
+			previousSkills: ["mets", "instructors", "communication", "critical reading", "texts"]
 		};
   });

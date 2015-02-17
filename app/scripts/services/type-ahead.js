@@ -16,7 +16,7 @@ angular.module('valorumApp')
 
 			/**
 			 * @ngdoc function
-			 * @name TypeAhead.getInstitution
+			 * @name TypeAhead.getSkills
 			 * @methodOf valorumApp.service:TypeAhead
 			 *
 			 * @description
@@ -24,24 +24,24 @@ angular.module('valorumApp')
 			 *
 			 * @param {String} searchVal The search term to use
 			 */
-			getInstitution: function (searchVal) {
+			getSkills: function (searchVal) {
 				// Only search if search has at least three letters
 				if (searchVal && searchVal.length > 2) {
 					// Return a promise
-					return $http.get('institutions', {
+					return $http.get('json/skill-search.json', {
 						params: {
 							name: searchVal
 						}
 					}).then(function (res) {
-						var colleges = [];
-						angular.forEach(res.data, function (item) {
+						var skills = [];
+						angular.forEach(res.data.skills, function (item) {
 							// Cast the data for the type-ahead
-							colleges.push({
-								InstitutionID: item.AmCollegeID,
-								Name: item.Name
+							skills.push({
+								name: item.name,
+								score: item.score
 							});
 						});
-						return colleges;
+						return skills;
 					});
 				} else {
 					return [];
@@ -71,28 +71,6 @@ angular.module('valorumApp')
 				} else {
 					return [];
 				}
-			},
-
-			/**
-			 * @ngdoc function
-			 * @name TypeAhead.getCourseByTitleOrCode
-			 * @methodOf valorumApp.service:TypeAhead
-			 *
-			 * @description
-			 * Populate the type-ahead for searching Courses
-			 *
-			 * @param {String} searchVal The search term to use
-			 */
-			getCourseByTitleOrCode: function (searchVal) {
-				return $http.get('Courses', {
-					params: {
-						MaxCount: 20,
-						CampusVueCode: searchVal,
-						title: searchVal
-					}
-				}).then(function (res) {
-					return res;
-				});
 			}
 		};
 	});
