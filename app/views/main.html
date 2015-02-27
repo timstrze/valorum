@@ -52,11 +52,9 @@
 
             <div class="clearfix"></div>
 
-            <img class="chart-img img-responsive" src="images/chart.fw.png">
-            <!--<canvas id="line" class="chart chart-line" data="data"-->
-                    <!--labels="labels" legend="true" series="series"-->
-                    <!--click="onClick">-->
-            <!--</canvas>-->
+            <img class="img-responsive" style="position: absolute;" ng-src="images/chart-{{selectedTermIndex}}.png">
+            <img class="chart-img img-responsive" src="images/chart-bg.png">
+
         </div>
         <div class="col-md-3 right-chart">
             <term-details accumulated-skills="accumulatedSkills" selected-term="selectedTerm"></term-details>

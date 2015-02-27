@@ -14,6 +14,7 @@ angular.module('valorefyApp')
 
         ProgramTerms.http.get().$promise.then(function (response) {
             $scope.selectedTerm = response.terms[0];
+			$scope.selectedTermIndex = 0;
 			$scope.programTerms = response;
 
 			$scope.accumulatedSkills = $scope.getAccumulatedSkills();
