@@ -19,7 +19,7 @@ angular.module('valorumApp')
 		$scope.getDetails = function (item) {
 			Program.getDetails(item);
 			Salary.getAll();
-			Skills.getAll();
+			Skills.getGroups();
 
 			$location.path('/details');
 		}

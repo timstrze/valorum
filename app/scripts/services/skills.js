@@ -15,7 +15,7 @@ angular.module('valorumApp')
 		getNeeded: function(max) {
 			var skills = [];
 
-			angular.forEach(this.all, function(group) {
+			angular.forEach(this.groups, function(group) {
 				if(group.threshold >= max) {
 					skills = skills.concat(group.skills);
 				}
@@ -30,7 +30,7 @@ angular.module('valorumApp')
 				children: []
 			};
 
-			angular.forEach(this.all, function(group){
+			angular.forEach(this.groups, function(group){
 				if(group.threshold <= max) {
 					angular.forEach(group.skills, function(skill){
 						flattened.children.push({
@@ -48,7 +48,7 @@ angular.module('valorumApp')
 		getAcquired: function(max) {
 			var skills = [];
 
-			angular.forEach(this.all, function(group) {
+			angular.forEach(this.groups, function(group) {
 				if(group.threshold <= max) {
 					skills = skills.concat(group.skills);
 				}
@@ -57,11 +57,27 @@ angular.module('valorumApp')
 			return skills;
 		},
 
-		getAll: function() {
-			var _this = this;
-			this.http.get().$promise.then(function(response){
-				_this.all = response.groups;
+		getAllSkills: function() {
+			var skills = [];
+
+			angular.forEach(this.groups, function(group) {
+				skills = skills.concat(group.skills);
 			});
+
+			return skills;
+		},
+
+		getGroups: function() {
+			var _this = this;
+			if(!this.groups) {
+				this.http.get().$promise.then(function(response){
+					_this.groups = response.groups;
+					//return ["adsfad", "asdfasdf"];
+				});
+			}else{
+				return this.groups;
+			}
+
 		},
 
 		/**

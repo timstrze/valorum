@@ -8,7 +8,7 @@
  * Line Chart
  */
 angular.module('valorumApp')
-    .directive('bubbleChart', function () {
+    .directive('bubbleChart', function (Skills) {
         return {
             restrict: 'EA', //E = element, A = attribute, C = class, M = comment
             scope: {
@@ -88,14 +88,14 @@ angular.module('valorumApp')
                 d3.select(self.frameElement).style("height", diameter + "px");
 
 				$scope.$watch('max', function() {
-					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
-						animate($scope.skills.getAcquiredDetailedSkills($scope.max));
+					if($scope.skills && $scope.skills.length) {
+						animate(Skills.getAcquiredDetailedSkills($scope.max));
 					}
 				}, true);
 
 				$scope.$watch('skills.all', function() {
-					if($scope.skills && $scope.skills.all && $scope.skills.all.length) {
-						animate($scope.skills.getAcquiredDetailedSkills($scope.max));
+					if($scope.skills && $scope.skills.length) {
+						animate(Skills.getAcquiredDetailedSkills($scope.max));
 					}
 				}, true);
 

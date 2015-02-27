@@ -20,10 +20,10 @@ angular.module('valorumApp')
 			$location.path("/");
 		}
 
-		$scope.getDetails = function (item) {
-			Program.getDetails(item);
-			Salary.getAll();
-			Skills.getAll();
-		}
+//		$scope.getDetails = function (item) {
+//			Program.getDetails(item);
+//			Salary.getAll();
+//			Skills.getGroups();
+//		}
 
     });
