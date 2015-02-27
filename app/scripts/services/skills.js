@@ -2,110 +2,76 @@
 
 /**
  * @ngdoc service
- * @name valorumApp.Skills
+ * @name valorefyApp.Skills
  * @description
  * # Skills
- * Factory in the valorumApp.
+ * Factory in the valorefyApp.
  */
-angular.module('valorumApp')
-  .factory('Skills', function ($resource) {
-    // Public API here
-    return {
+angular.module('valorefyApp')
+	.factory('Skills', function ($resource, $http) {
 
-		getNeeded: function(max) {
-			var skills = [];
+		// Public API
+		return {
 
-			angular.forEach(this.groups, function(group) {
-				if(group.threshold >= max) {
-					skills = skills.concat(group.skills);
-				}
-			});
-
-			return skills;
-		},
-
-		getAcquiredDetailedSkills: function(max) {
-			var flattened = {
-				name: "Skills Earned",
-				children: []
-			};
-
-			angular.forEach(this.groups, function(group){
-				if(group.threshold <= max) {
-					angular.forEach(group.skills, function(skill){
-						flattened.children.push({
-							className: skill,
-							value: parseInt(group.threshold) + 10,
-							packageName: group.name
+			/**
+			 * @ngdoc function
+			 * @name TypeAhead.getSkills
+			 * @methodOf valorumApp.service:TypeAhead
+			 *
+			 * @description
+			 * Populate the type-ahead for searching Institutions
+			 *
+			 * @param {String} searchVal The search term to use
+			 */
+			getSkills: function (searchVal) {
+				// Only search if search has at least three letters
+				if (searchVal && searchVal.length > 2) {
+					var _this = this;
+					// Return a promise
+					return $http.get('json/skill-search.json', {
+						params: {
+							name: searchVal
+						}
+					}).then(function (res) {
+						var skills = [];
+						angular.forEach(res.data.skills, function (item) {
+							// Cast the data for the type-ahead
+							skills.push({
+								name: item.name,
+								score: item.score
+							});
 						});
+
+						_this.searchedSkills = skills;
+
+						return [];
 					});
-				}
-			});
-
-			return flattened;
-		},
-
-		getAcquired: function(max) {
-			var skills = [];
-
-			angular.forEach(this.groups, function(group) {
-				if(group.threshold <= max) {
-					skills = skills.concat(group.skills);
-				}
-			});
-
-			return skills;
-		},
-
-		getAllSkills: function() {
-			var skills = [];
-
-			angular.forEach(this.groups, function(group) {
-				skills = skills.concat(group.skills);
-			});
-
-			return skills;
-		},
-
-		getGroups: function() {
-			var _this = this;
-			if(!this.groups) {
-				this.http.get().$promise.then(function(response){
-					_this.groups = response.groups;
-					//return ["adsfad", "asdfasdf"];
-				});
-			}else{
-				return this.groups;
-			}
-
-		},
-
-		/**
-		 * @ngdoc function
-		 * @name Skills.http
-		 * @methodOf valorumApp.service:Skills
-		 *
-		 * @description
-		 * Public access to the GET, PUT, and POST methods
-		 *
-		 * @param {String} ID of program version
-		 */
-		http: $resource('json/skills.json/:id', {
-			id: '@id'
-		}, { //parameters default
-			update: {
-				method: 'PUT',
-				params: {}
-			},
-			get: {
-				method: 'GET',
-				params: {
-					id: '@id'
+				} else {
+					this.searchedSkills = null;
+					return [];
 				}
 			},
-			post: {
-				method: 'POST'
-			}
-		})
-    };
-  });
+
+
+			/**
+			 * @ngdoc function
+			 * @name Skills.http
+			 * @methodOf valorefyApp.service:Skills
+			 *
+			 * @description
+			 * Public access to the GET, PUT, and POST methods
+			 *
+			 * @param {String} ID of program version
+			 */
+			http: $resource('json/skills.json/:id', {
+				id: '@id'
+			}, { //parameters default
+				get: {
+					method: 'GET',
+					params: {
+						id: '@id'
+					}
+				}
+			})
+		};
+	});

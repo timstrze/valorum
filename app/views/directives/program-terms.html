@@ -1,0 +1,26 @@
+<div style="position:relative;" class="program-terms">
+  <div class="term-block pull-left first done" style="width:11.111111111%;">
+    <div class="term-block-title">Previous</div>
+    <div class="term-block-subtitle-skill">SKILLS</div>
+    <div class="term-block-skills">
+      <span class="skill-pill-sm" style="background-color: #5cb85c" tooltip="{{skill}}" ng-repeat="skill in previousSkills"></span>
+    </div>
+    <div class="term-block-subtitle">COURSES</div>
+    <div class="term-block-courses">
+        <span class="course-pill-sm" style="background-color: #428542" tooltip="CM 107: COLLEGE COMPOSITION I"></span>
+        <span class="course-pill-sm" style="background-color: #428542" tooltip="CM 201: COLLEGE COMPOSITION II"></span>
+    </div>
+  </div>
+  
+  <div class="term-block pull-left animate" ng-class="{'active': selectedTerm.name == term.name, 'done': selectedTermIndex >= $index}" style="width:11.111111111%;" ng-repeat="term in programTerms.terms" ng-click="changeTerm(term, $index)">
+    <div class="term-block-title animate">{{term.name}}</div>
+    <div class="term-block-subtitle-skill">SKILLS</div>
+    <div class="term-block-skills">
+      <span class="skill-pill-sm animate" tooltip="{{skill}}" ng-repeat="skill in term.skills"></span>
+    </div>
+    <div class="term-block-subtitle">COURSES</div>
+    <div class="term-block-courses">
+      <span class="course-pill-sm animate" tooltip="{{course.code}}: {{course.title}}" ng-repeat="course in term.courses"></span>
+    </div>
+  </div>
+</div>

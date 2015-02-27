@@ -1,331 +1,374 @@
-/* ==== Google font ==== */
-@import url('http://fonts.googleapis.com/css?family=Lato:400,300,700,900');
-
-body {
-    background-color: #0F2846;
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6em;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    color: rgb(15, 40, 70);
+.btn-link {
+  color: #4ca5bf;
 }
 
-h1 {
-    font-size: 40px;
+.round {
+  border-radius: 50%;
 }
 
-h3 {
-    font-weight: 400;
+.skill-pill {
+  border-radius: .8em;
+  display: inline-block;
+  font-size: 75%;
+  line-height: 1;
+  padding: 0.3em 0.7em 0.4em;
+  text-align: center;
+  vertical-align: baseline;
+  white-space: nowrap;
+  margin-bottom: 2px;
+  background-color: #FFF;
+  cursor: pointer;
+  margin-right: 2px;
 }
 
-h4 {
-    font-weight: 400;
-    font-size: 20px;
+.skill-pill-gained.active {
+  background: #337ab7;
+  color: #FFF;
+
 }
 
-/*p {*/
-    /*margin-bottom: 20px;*/
-    /*font-size: 16px;*/
-/*}*/
-
-
-a {
-    color: #d6ee18;
-    word-wrap: break-word;
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
+.skill-pill-previous.active {
+  background: #5cb85c;
+  color: #FFF;
 }
 
-a:hover,
-a:focus {
-    color: #0F2846;
-    text-decoration: none;
-    outline: 0;
+.skill-pill-future.active {
+  background: #777;
+  color: #FFF;
 }
 
-a:before,
-a:after {
-    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-    transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-.navbar-inverse .navbar-nav > li > a {
-    color: #0F2846;
+.skill-pill-gained {
+  border: 1px solid #4694ab;
+  color: #4694ab;
 }
 
-.alignleft {
-    text-align: left;
-}
-.alignright {
-    text-align: right;
+.skill-pill-previous {
+  border: 1px solid #5cb85c;
+  color: #5cb85c;
 }
 
-.aligncenter {
-    text-align: center;
+.skill-pill-future {
+  border: 1px solid #777;
+  color: #777;
 }
 
-.btn-theme  {
-    color: #fff;
-    background-color: #fd680e;
-    border-color: #fd680e;
-}
-.btn-theme:hover  {
-    color: #fff;
-    background-color: #444;
-    border-color: #444;
-}
-form.signup {
-    margin-top: 30px;
-}
-form.signup button.btn {
-    text-transform: uppercase;
-    font-weight: 700;
-}
-form.signup input.form-control:focus {
-    border-color: #fd680e;
+.skill-pill-related {
+  color: #f0ad4e;
+  border: 1px solid #f0ad4e;
 }
 
-
-/* Nav */
-
-a.navbar-brand {
-    color: #fff !important;
-    font-weight: 900;
-    text-transform: uppercase;
-}
-a.navbar-brand:hover {
-    color: #ddd !important;
+.skill-pill-lg {
+  border-radius: 12px;
 }
 
-/* Header */
+.timeline-bg {
+  background: -moz-linear-gradient(left, rgba(51, 122, 183, 0.1) 0%, rgba(51, 122, 183, 0.3) 100%);
+  /* FF3.6+ */
 
-#header {
-    background-color: #444;
-    background: url(../images/main-bg.jpg) no-repeat center top;
-    margin-top: 61px;
-    padding-top: 150px;
-    background-attachment: relative;
-    background-position: center center;
-    min-height: 900px;
-    width: 100%;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(51, 122, 183, 0.1)), color-stop(100%, rgba(51, 122, 183, 0.3)));
+  /* Chrome,Safari4+ */
 
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
+  background: -webkit-linear-gradient(left, rgba(51, 122, 183, 0.1) 0%, rgba(51, 122, 183, 0.3) 100%);
+  /* Chrome10+,Safari5.1+ */
 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+  background: -o-linear-gradient(left, rgba(51, 122, 183, 0.1) 0%, rgba(51, 122, 183, 0.3) 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(left, rgba(51, 122, 183, 0.1) 0%, rgba(51, 122, 183, 0.3) 100%);
+  /* IE10+ */
+
+  background: linear-gradient(to right, rgba(51, 122, 183, 0.1) 0%, rgba(51, 122, 183, 0.3) 100%);
+  /* W3C */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a337ab7', endColorstr='#4d337ab7', GradientType=1);
+  /* IE6-9 */
 }
 
-
-
-#header h1 {
-    margin-top: 60px;
-    margin-bottom: 15px;
-    color: #fff;
-    font-size: 45px;
-    font-weight: 900;
-    letter-spacing: -1px;
+.timeline-bg hr {
+  border-color: rgba(51, 122, 183, .5);
 }
 
-h2.subtitle {
-    color: #fff;
-    font-size: 20px;
+.timeline-bg.table-bordered > tbody > tr > td {
+  border-color: rgba(51, 122, 183, .2);
 }
 
-/* slide */
-.carousel-indicators {
-    position: absolute;
-    bottom: -40px;
-    left: 50%;
-    z-index: 15;
-    width: 60%;
-    padding-left: 0;
-    margin-left: -50%;
-    text-align: center;
-    list-style: none;
-}
-.carousel-indicators li {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    margin: 1px;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: #000 \9;
-    background-color: #fff;
-    border: 1px solid #fff;
-    border-radius: 10px;
-}
-.carousel-indicators .active {
-    width: 12px;
-    height: 12px;
-    margin: 0;
-    background-color: #b7cb1b;
+.balloon {
+  border-radius: 50%;
+  background: #FF;
+  border: 2px solid black;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  display: inline-block;
 }
 
-/* footer */
-#footer {
-    background: #fd680e;
-    padding: 20px 0 5px;
+_div {
+  border: 1px solid lightgrey;
 }
 
-p.copyright {
-    color: #fff;
-    text-align: center;
+.term-block {
+  border-right: 1px solid #5BC0DE;
+  min-height: 210px;
+  /* background-color: rgba(91, 192, 222, 0.1); */
 }
 
-.container {
-    width: 100%;
+.term-block.term-zoom {
+  width: 100%;
+  position: absolute;
+  z-index: 1;
 }
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-    /* Remove the padding we set earlier */
-    .header,
-    .marketing,
-    .footer {
-        padding-left: 0;
-        padding-right: 0;
-    }
-
-    /* Space out the masthead */
-    .header {
-        margin-bottom: 30px;
-    }
-
-    /* Remove the bottom border on the jumbotron for visual effect */
-    .jumbotron {
-        border-bottom: 0;
-    }
+.term-block-title {
+  text-align: center;
+  color: white;
+  background-color: #5BC0DE;
 }
 
-.navbar-inverse {
-    background-color: #0F2846;
+.term-block-subtitle {
+  text-align: center;
+  color: #43585E;
+  font-size: 10px;
+  background-color: #e6e6e6;
+  margin-top: 2px;
 }
 
-/*.program-details {*/
-    /*background-color: #0F2846;*/
-/*}*/
+.term-block-subtitle-skill {
+  text-align: center;
+  color: #43585E;
+  font-size: 10px;
+  background-color: #e6e6e6;
+  margin-top: 6px;
+}
 
-/*Rangeslider*/
-.ngrs-range-slider {
-    margin: 0px 0 0px;
-    padding: 9px;
+.term-block-skills {
+  padding: 5px;
+  height: 65px;
+}
+
+.term-block-courses {
+  padding: 5px;
+  height: 100px;
 }
 
 
-.program-form .form-group {
-    width: 90% !important;
+.term-block.done .term-block-title {
+  background-color: #408aa0;
+
 }
 
-.program-form input {
-    width: 100% !important;
+.term-block.active {
+  //background-color: rgba(0, 0, 0, 0.2);
+  border-right-width: 3px;
+  border-color: #4ca5bf;
 }
 
-/*Statistics*/
-.visualizer .row {
-    margin-bottom: 15px;
+.term-block.active .term-block-title {
+  background-color: #408aa0;
 }
 
-.visualizer h1 {
-    color: #cccccc;
+.term-block.first {
+  border-left: 1px solid #5BC0DE;
 }
 
-.visualizer .description {
-    font-size: 24px;
-    color: #ffffff;
+.course-pill-sm {
+  background-color: #43585E;
+  color: white;
+  width: 100%;
+  height: 12px;
+  display: block;
+  margin-bottom: 4px;
 }
 
-.statistics .badge {
-    font-size: 18px;
+.skill-pill-sm {
+  border-radius: 50%;
+  background-color: #4694AB;
+  border: medium none;
+  height: 12px;
+  width: 12px;
+  display: inline-block;
+  margin-right: 4px;
 }
 
+.course-pill {
+  background-color: #43585E;
+  color: white;
+  padding: 3px 7px;
+  margin-bottom: 8px;
+  display: inline-block;
+  width: 100%;
+  position: relative;
+  font-size: 12px;
 
-/*General*/
-.complete{
-    background-color: rgb(51, 122, 183) !important;
-}
-
-.acquired{
-    background-color: rgb(2, 129, 53) !important;
-    border-color: rgb(2, 129, 53) !important;
-}
-
-.needed {
-    background-color: #cccccc;
 }
 
-/*Animations*/
-.slide{
-    left:0;
-}
-.slide.ng-enter{
-    transition:1s linear all;
-    position:fixed;
-    z-index:inherit;
-    left:-100%;
-    height:inherit;
-    opacity: 0;
-}
-.slide.ng-leave{
-    transition:1s linear all;
-    position:fixed;
-    z-index:9999;
-    right:0;
-    opacity: 1;
-}
-.slide.ng-leave-active{
-    transition:1s linear all;
-    position:fixed;
-    right:-100%;
-    left:100%;
-    opacity: 0;
-}
-.slide.ng-enter-active{
-    transition:1s linear all;
-    left:0;
-    position:relative;
-    opacity: 1;
+.course-pill-credits {
+  margin-left: 7px;
+  background-color: white;
+  color: #43585E;
+  display: inline-block;
+  border-top: 1px solid #43585E;
+  border-right: 1px solid #43585E;
+  border-bottom: 1px solid #43585E;
+  border-radius: 50%;
+  padding-left: 5px;
+  padding-right: 5px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
 }
 
-
-.program-details {
-    margin-top: 86px;
+.skill-p {
+  background-color: #4694ab;
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 4px;
+  display: inline-block;
+  position: relative;
+  font-size: 12px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
 }
 
-.navbar {
-    height: 61px;
-    background-color: rgb(229, 229, 229);
+.term-slider {
+  background-color: #ccc;
+  border-bottom: 1px solid #b1b1b1;
 }
 
-.badge-blue {
-    background-color: #0F2846 !important;
-    margin: 1px;
+.term-slider-knob {
+  width: 12.5%;
+  margin-left: 12.5%;
+  height: 20px;
+  background-color: blue;
+  color: white;
 }
 
-.skill-column {
-    border-radius: 9px;
-    box-shadow: inset 0px 0px 2px #000000;
-    background: #fff;
+.rangestepper .step {
+  background-color: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 14px;
+  width: 12.5%;
 }
 
-.skill-column .acquired{
-    font-size: 16px;
+.rangestepper .step .active {
+  background-color: #5bc0de;
+  border-radius: 0;
+  cursor: pointer;
+  display: block;
+  height: 14px;
+  vertical-align: top;
+  width: 105px;
+}
+
+.tooltip-inner {
+  background-color: #43585E;
+  line-height: 14px;
+  text-transform: capitalize;
+}
+
+.tooltip-arrow {
+  border-top-color: #43585E;
+  color: #43585E;
+}
+/*
+.scroll-bg {
+  background-color: #e6e6e6;
+  height: 14px;
+  margin-bottom: 3px;
+  postion: relitive;
+}
+*/
+.scroll-handle {
+  height: 14px;
+  float: left;
+  width: 11.1%;
+  margin-left: 22.2%;
+  background-color: rgba(0, 0, 0, 0.17);
+  text-align: center;
+  line-height: 15px;
+  background-color: #bebebe;
+  color: #909090;
+}
+
+* { 
+  outline: none;
+}
+.animate {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.term-block {
+  cursor: pointer;
+}
+.term-block:hover {
+  background: rgba(0,0,0,0.2);
+}
+.term-block.active  {
+  cursor: default;
+  border-width: 1px;
+}
+.term-block.active:hover, .term-block.first:hover, .term-block.done:hover {
+  background: transparent;
+}
+.term-block:hover .term-block-title {
+  background: #408aa0;
+}
+.skill-pill-sm:hover {
+  background: #50B1CE;
+}
+.course-pill-sm:hover {
+  background: #698A94;
+}
+.term-indicator { 
+  border-right: 1px solid #5BC0DE;
+  width: 11.11111%;
+  padding-left: 11.11111%;
+  position: absolute;
+  top: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.25);
+}
+.progress-indicator { 
+  border-right: 1px solid #5BC0DE;
+  width: 11.1%;
+  position: absolute;
+  top: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.15);
+}
+.left-chart.col-md-9 {
+  padding: 0;
+}
+.right-chart.col-md-3 .term-block {
+  background-color: rgba(0,0,0,0.2);
+}
+.chart-img {
+  min-width: 100%;
+}
+.program-title {
+  font-size: 28px;
+  font-weight: 100;
+  text-align: center;
+}
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: #000;
 }

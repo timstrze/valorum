@@ -1,0 +1,18 @@
+<div class="term-block active"
+     style="padding: 9px; border-right: none; -webkit-box-shadow: -0px 3px 5px 0px rgba(0,0,0,0.15); -moz-box-shadow: -0px 3px 5px 0px rgba(0,0,0,0.15); box-shadow: -0px 3px 5px 0px rgba(0,0,0,0.15);">
+  <div class="term-block-title" style="font-size:20px;">{{selectedTerm.name}}</div>
+  <div class="term-block-subtitle-skill" style="font-size:12px; margin-bottom:8px;">SKILLS</div>
+  <div class="term-block-skills" style="height:100px;">
+    <span class="skill-p" ng-repeat="skill in selectedTerm.skills">{{skill}}</span>
+  </div>
+  <div class="term-block-subtitle" style="font-size:12px; margin-top:5px; margin-bottom:8px;">COURSES</div>
+  <div class="term-block-courses">
+    <span ng-repeat="course in selectedTerm.courses" class="course-pill">{{course.code}}: {{course.title}}
+      <span class="course-pill-credits"> {{course.credits}}</span>
+    </span>
+  </div>
+  <div class="" style="font-size:12px; margin-top:81px; margin-bottom:8px; text-align:center; color:white;">
+    ACCUMULATED SKILLS
+  </div>
+    <bubble-chart skills="accumulatedSkills"></bubble-chart>
+</div>

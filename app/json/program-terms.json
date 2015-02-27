@@ -1,0 +1,93 @@
+{
+  "terms": [
+    {
+      "name": "T1",
+      "date": "2014-01-01",
+      "courses": [
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+        {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5}
+      ],
+      "skills": ["Server", "Mathematics", "Monitoring", "Programming", "HTML", "InDesign", "SEO", "Flash", "MySQ"]
+    },{
+      "name": "T2",
+      "date": "2014-01-01",
+      "courses": [
+          {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5},
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5}
+      ],
+      "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"]
+    },{
+      "name": "T3",
+      "date": "2014-01-01",
+      "courses": [
+          {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+          {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5},
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5}
+      ],
+          "skills": ["Accounting", "Facts", "Academic Research", "Clarity", "Financials", "Revisions"]
+    },{
+      "name": "T4",
+      "date": "2014-01-01",
+      "courses": [
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+          {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5},
+        {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+        {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5}
+      ],
+      "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"]
+    },{
+      "name": "T5",
+      "date": "2014-01-01",
+      "courses": [
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5},
+          {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+          {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+          {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5}
+      ],
+          "skills": ["Accounting", "Facts", "Academic Research", "Clarity", "Financials", "Revisions"]
+    },{
+      "name": "T6",
+      "date": "2014-01-01",
+      "courses": [
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5}
+      ],
+      "skills": ["Server", "Mathematics", "Monitoring", "Programming", "HTML", "InDesign", "SEO", "Flash", "MySQ"]
+    },{
+      "name": "T7",
+      "date": "2014-01-01",
+      "courses": [
+          {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+        {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5}
+      ],
+          "skills": ["Accounting", "Facts", "Academic Research", "Clarity", "Financials", "Revisions"]
+    },{
+      "name": "T8",
+      "date": "2014-01-01",
+      "courses": [
+          {"code": "CS 204", "title": "PROFESSIONAL PRESENCE", "credits": 3},
+          {"code": "MM 212", "title": "COLLEGE ALGEBRA", "credits": 5},
+          {"code": "CM 107", "title": "COLLEGE COMPOSITION I", "credits": 5},
+        {"code": "CM 220", "title": "COLLEGE COMPOSITION II", "credits": 5},
+        {"code": "IT 111", "title": "PROGRAMMING FUNDAMENTALS", "credits": 5}
+      ],
+      "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"]
+    }
+  ]
+}
+

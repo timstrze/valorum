@@ -1,37 +1,73 @@
-<div ng-include="'views/partials/header.html'"></div>
-
-<div id="header">
+<header style="background-color:#f2f2f2;">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6 program-form">
-                <h1>Your Skill Encounter</h1>
-                <h2 class="subtitle">Search for a Program to see how your journey plays out!</h2>
-                <form class="form-inline signup" role="form">
-                    <div class="form-group">
-                        <input class="form-control"
-                               type="text"
-                               ng-model="Program.selectedProgram"
-                               placeholder="Search for Degree Programs by Name"
-                               typeahead-on-select="getDetails($item)"
-                               typeahead="Program as Program.ProgramVersionName for Program in TypeAhead.getProgramVersion($viewValue)"
-                               typeahead-loading="Program.isLoading"
-                               typeahead-template-url="views/partials/degree-names.html">
-                    </div>
-                </form>
+            <div class="col-md-2">
+                <br>
+                <img src="images/Valorefy_07.png" class="img-responsive">
             </div>
-            <div class="col-lg-4 col-lg-offset-2">
+            <div class="col-md-4">
+                <br>
+
             </div>
+            <div class="col-md-6 text-right">
+                <br>
+                <button class="btn btn-link" ng-click="openSkillExplorer()"><span class="fa fa-binoculars"></span> Skills Explorer</button>
+                <button class="btn btn-link"><span class="glyphicon glyphicon-cog"></span></button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <br>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <h1 class="program-title">My Bachelor of Science in Information Technology Program</h1>
+        </div>
+        <div class="col-md-3 text-right">
 
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
 
-<div id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-lg-offset-3">
-                <p class="copyright">Love from the Data + Product Team</p>
+        <div class="col-md-9 left-chart">
+
+            <div class="scroll-bg">
+                <div class="term-indicator animate" style="margin-left:11.1111111%"></div>
+                <div class="progress-indicator animate"></div>
             </div>
+
+            <program-terms previous-skills="previousSkills"
+                           selected-term-index="selectedTermIndex"
+                           program-terms="programTerms"
+                           change-term="changeTerm"
+                           selected-term="selectedTerm">
+            </program-terms>
+
+            <div class="clearfix"></div>
+
+            <img class="chart-img img-responsive" src="images/chart.fw.png">
+            <!--<canvas id="line" class="chart chart-line" data="data"-->
+                    <!--labels="labels" legend="true" series="series"-->
+                    <!--click="onClick">-->
+            <!--</canvas>-->
+        </div>
+        <div class="col-md-3 right-chart">
+            <term-details accumulated-skills="accumulatedSkills" selected-term="selectedTerm"></term-details>
         </div>
     </div>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>

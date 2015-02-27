@@ -1,0 +1,104 @@
+<div class="modal-header">
+    <div class="row">
+        <div class="col-md-8">
+            <h4 class="modal-title">
+                <span class="fa fa-binoculars"></span> Skill Explorer
+            </h4>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="close" ng-click="cancel()" aria-label="Close"
+                    style="margin-left:10px;">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+    </div>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="input-group input-group-sm">
+                <input class="form-control"
+                       type="text"
+                       ng-model="asyncDegreeSelected"
+                       placeholder="Search for a skill..."
+                       typeahead="Skill as Skill.name for Skill in Skills.getSkills($viewValue)"
+                       typeahead-loading="isLoading">
+
+
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button"><span
+                        class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+            <br>
+
+            <div class="well" ng-if="Skills.searchedSkills">
+                <p>
+                    <strong>
+                        <span class="fa fa-cube"></span> Search ({{Skills.searchedSkills.length}})
+                    </strong>
+                </p>
+                <span class="skill-pill skill-pill-previous" ng-repeat="skill in Skills.searchedSkills" ng-click="setSelectedSkill(skill.name)">{{skill.name}}</span>
+            </div>
+
+            <div class="well">
+                <p>
+                    <strong>
+                        <span class="fa fa-cube"></span> My skill bin ({{previousSkills.length + gainedSkills.length + futureSkills.length}})
+                    </strong>
+                </p>
+
+                <span class="skill-pill skill-pill-previous" tooltip="{{skill}}" ng-repeat="skill in previousSkills" ng-click="setSelectedSkill(skill)">{{skill}}</span>
+
+                <span class="skill-pill skill-pill-gained" tooltip="{{skill}}" ng-repeat="skill in gainedSkills track by $index" ng-click="setSelectedSkill(skill)">{{skill}}</span>
+
+                <span class="skill-pill skill-pill-future" tooltip="{{skill}}" ng-repeat="skill in futureSkills track by $index" ng-click="setSelectedSkill(skill)">{{skill}}</span>
+
+                <br>
+                <hr>
+                <small class="text-muted">
+                    <span style="display: inline-block; width:12px; height:12px;" class="skill-pill-previous active round"></span> Previous&nbsp;&nbsp;
+                    <span style="display: inline-block; width:12px; height:12px;" class="skill-pill-gained active round"></span> Gained&nbsp;&nbsp;
+                    <span style="display: inline-block; width:12px; height:12px;" class="skill-pill-future active round"></span> Future gained
+                </small>
+            </div>
+
+        </div>
+        <div class="col-md-7">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3 style="margin-top:0px;">
+                        <span class="skill-pill-lg label label-success">
+                            {{selectedSkill.name}}
+                        </span>
+                    </h3>
+                </div>
+            </div>
+
+            <p>{{selectedSkill.description}}</p>
+
+            <hr>
+            <p>
+                <strong>
+                    <span class="fa fa-suitcase"></span> 52,745 jobs needing {{selectedSkill.name}} skills
+                </strong>
+            </p>
+            <dl ng-repeat="job in selectedSkill.jobs">
+                <dt><a href="#">{{job.title}}</a></dt>
+                <dd>{{job.description}}</dd>
+            </dl>
+            <p class="text-right">
+                <button class="btn btn-link btn-xs" type="button">More jobs</button>
+            </p>
+            <hr>
+            <p>{{relatedSkills.length}} related sklls</p>
+            <span class="skill-pill skill-pill-related" ng-repeat="skill in relatedSkills">{{skill}}</span>
+
+            <br>
+            <br>
+
+        </div>
+    </div>
+</div>

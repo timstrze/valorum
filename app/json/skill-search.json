@@ -1,53 +1,29 @@
 {
     "skills": [
+
         {
             "id": 11,
-            "name": "Business Valuations",
+            "name": "HTML",
             "score": 0
         },
         {
             "id": 25,
-            "name": "Business Valuation",
+            "name": "CSS",
             "score": 0
         },
         {
             "id": 1355,
-            "name": "Advanced Business Application Programming (ABAP)",
+            "name": "Javascript",
             "score": 0
         },
         {
             "id": 1542,
-            "name": "B2B (Business to Business)",
+            "name": "AngularJS",
             "score": 0
         },
         {
             "id": 1545,
-            "name": "B2C (Business to Consumer)",
-            "score": 0
-        },
-        {
-            "id": 1649,
-            "name": "Business  Intelligence",
-            "score": 0
-        },
-        {
-            "id": 1650,
-            "name": "Business Accounting",
-            "score": 0
-        },
-        {
-            "id": 1651,
-            "name": "Business Analysis",
-            "score": 0
-        },
-        {
-            "id": 1652,
-            "name": "Business Application Programming Interface",
-            "score": 0
-        },
-        {
-            "id": 1653,
-            "name": "Business Architecture",
+            "name": "jQuery",
             "score": 0
         }
     ]

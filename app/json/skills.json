@@ -1,77 +1,20 @@
 {
-    "groups": [
+    "skills": [
         {
-            "name": "T1",
-            "date": "2014-01-01",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Client",
-            "version": "2.0",
-            "skills": ["accounting", "facts", "academic research", "clarity", "financials", "revisions"],
-            "threshold": "0"
-        },
-        {
-            "name": "T2",
-            "date": "2014-02-02",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Client",
-            "version": "2.1",
-            "skills": ["mets", "instructors", "communication", "critical reading", "texts"],
-            "threshold": "12.5"
-        },
-        {
-            "name": "T3",
-            "date": "2014-03-03",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Server",
-            "version": "3.5",
-            "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"],
-            "threshold": "25"
-        },
-        {
-            "name": "T4",
-            "date": "2014-05-30",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Client",
-            "version": "2.2",
-            "skills": ["email", "deals", "credit", "writers", "cms", "options"],
-            "threshold": "37.5"
-        },
-        {
-            "name": "T5",
-            "date": "2014-07-28",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Server",
-            "version": "3.5",
-            "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"],
-            "threshold": "50"
-        },
-        {
-            "name": "T6",
-            "date": "2014-08-30",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Client",
-            "version": "2.2",
-            "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"],
-            "threshold": "67.5"
-        },
-        {
-            "name": "T7",
-            "date": "2014-09-01",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Server",
-            "version": "3.5",
-            "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"],
-            "threshold": "80"
-        },
-        {
-            "name": "T8",
-            "date": "2014-09-08",
-            "description": "Mozilla Web Developer, MooTools &amp; jQuery Consultant, MooTools Core Developer",
-            "type": "Client",
-            "version": "2.2",
-            "skills": ["Mozilla Web Developer", "jQuery", "Javascript", "CSS", "HTML", "AngularJS", "WebGL"],
-            "threshold": "92"
+            "name": "Javascript",
+            "description": "JavaScript is the Netscape-developed object scripting language used in millions of web pages and server applications worldwide. Netscape's JavaScript is a superset of the ECMA-262 Edition 3 (ECMAScript) standard scripting language, with only mild differences from the published standard.",
+            "jobs": [
+                {
+                    "title": "JavaScript Developer",
+                    "link": "http://www.google.com",
+                    "description": "Launchiez $65,000 - $100,000 a year Launchiez is seeking a talented, motivated developer to join our growing team! We’re agile, we’re a startup, and we move quick! If you’re interested in being."
+                },
+                {
+                    "title": "Software Engineer",
+                    "link": "http://www.google.com",
+                    "description": "Echo Global Logistics The Software Engineer contributes to engineering of large scale solutions to enable Echo’s business while supporting the strategic architectural vision of."
+                }
+            ]
         }
     ]
 }
-
