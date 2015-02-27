@@ -93,8 +93,12 @@
                 <button class="btn btn-link btn-xs" type="button">More jobs</button>
             </p>
             <hr>
-            <p>{{relatedSkills.length}} related sklls</p>
-            <span class="skill-pill skill-pill-related" ng-repeat="skill in relatedSkills">{{skill}}</span>
+            <p>{{relatedSkillSet.length}} related sklls</p>
+
+            <span style="height:260px; width: 300px; display: block; margin: 0 auto; margin-top: -40px;">
+                <bubble-chart skills="relatedSkills"></bubble-chart>
+            </span>
+
 
             <br>
             <br>

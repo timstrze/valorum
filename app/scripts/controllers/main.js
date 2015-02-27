@@ -180,6 +180,23 @@ angular.module('valorefyApp')
 			return flattened;
 		};
 
+		$scope.getRelatedSkills = function() {
+			var flattened = {
+				name: "Skills Earned",
+				children: []
+			};
+
+			angular.forEach($scope.relatedSkillSet, function(skill){
+				flattened.children.push({
+					className: skill,
+					value: 10,
+					packageName: skill
+				});
+			});
+
+			$scope.relatedSkills = flattened;
+		};
+
 		$scope.openSkillExplorer = function() {
 			$scope.modalInstance = $modal.open({
 				templateUrl: 'views/partials/skill-explorer.html',
@@ -194,6 +211,8 @@ angular.module('valorefyApp')
 
 		$scope.selectedSkill = "Javascript";
 		$scope.previousSkills = ["HTML", "CSS", "Javascript", "AngularJS", "Ruby"];
-		$scope.relatedSkills = ["Server", "Project", "Typing", "Blogging", "Analysis", "Design"];
+		$scope.relatedSkillSet = ["Server", "Analysis", "Design", "Mathematics", "Monitoring", "Programming", "InDesign", "SEO", "Flash", "MySQL"];
+
+		$scope.getRelatedSkills();
 
     });
